@@ -5,6 +5,12 @@ import { CORE_CONCEPTS } from './data';
 
 
 function App() {
+  function handleSelect(selectedButton) {
+    if (selectedButton === 'components') console.log('Components selected');
+    if (selectedButton === 'jsx') console.log('JSX selected');
+    if (selectedButton === 'props') console.log('Props selected');
+    if (selectedButton === 'state') console.log('State selected');
+  }
   return (
     <div>
       <Header />
@@ -21,10 +27,10 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton>Components</TabButton>
-            <TabButton>JSX</TabButton>
-            <TabButton>Props</TabButton>
-            <TabButton>State</TabButton>
+            <TabButton onSelect={() => handleSelect('components')}>Components</TabButton>
+            <TabButton onSelect={() => handleSelect('jsx')}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
           </menu>
         </section>
       </main>
